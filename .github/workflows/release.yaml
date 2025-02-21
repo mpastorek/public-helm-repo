@@ -47,17 +47,15 @@ jobs:
         if: env.SKIP_DEPLOY == 'false'
         run: |
           echo "packaging"
-#          rm -rf .cr-release-packages
-#          mkdir -p .cr-release-packages
-#          helm package charts/test-app --destination=.cr-release-packages
+          rm -rf .cr-release-packages
+          mkdir -p .cr-release-packages
+          helm package charts/test-app --destination=.cr-release-packages
 
       - name: Run chart-releaser
         if: env.SKIP_DEPLOY == 'false'
-        run: |
-          echo "deploying"
-#        uses: helm/chart-releaser-action@v1.5.0
-#        with:
-#          charts_dir: test-app
-#          skip_packaging: true
-#        env:
-#          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        uses: helm/chart-releaser-action@v1.5.0
+        with:
+          charts_dir: test-app
+          skip_packaging: true
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
