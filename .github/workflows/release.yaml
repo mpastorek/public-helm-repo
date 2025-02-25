@@ -35,6 +35,7 @@ jobs:
             echo "SKIP=true" >> $GITHUB_ENV
           else
             echo "SKIP=false" >> $GITHUB_ENV
+            echo "latest_tag=v$VERSION" >> $GITHUB_ENV
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
