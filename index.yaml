@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   test-app:
   - apiVersion: v2
+    appVersion: 0.1.9
+    created: "2025-02-25T08:52:08.969526458Z"
+    description: Public helm chart repository
+    digest: cc97235713433d2aab1fd32d868ba8ca88025a53262e2f0ee92e0e246e8740e1
+    name: test-app
+    type: application
+    urls:
+    - https://github.com/mpastorek/public-helm-repo/releases/download/test-app-0.1.9/test-app-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
     appVersion: 0.1.8
     created: "2025-02-25T08:43:47.877021394Z"
     description: Public helm chart repository
@@ -91,4 +101,4 @@ entries:
     urls:
     - https://github.com/mpastorek/public-helm-repo/releases/download/test-app-0.1.0/test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-25T08:43:47.877051651Z"
+generated: "2025-02-25T08:52:08.969563177Z"
