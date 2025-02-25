@@ -50,7 +50,7 @@ jobs:
 
       - name: Run chart-releaser
         if: env.SKIP == 'false'
-        uses: helm/chart-releaser-action@v1.6.0
+        uses: helm/chart-releaser-action@v1.7.0
         with:
           charts_dir: test-app
           skip_packaging: true
