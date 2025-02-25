@@ -2,8 +2,6 @@ name: release
 
 on:
   workflow_dispatch:
-    branches:
-      - main
 
 jobs:
   release:
@@ -41,19 +39,19 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Packaging
-        if: env.SKIP == 'false'
-        run: |
-          echo "packaging"
-          rm -rf .cr-release-packages
-          mkdir -p .cr-release-packages
-          helm package charts/test-app --destination=.cr-release-packages
+#      - name: Packaging
+#        if: env.SKIP == 'false'
+#        run: |
+#          echo "packaging"
+#          rm -rf .cr-release-packages
+#          mkdir -p .cr-release-packages
+#          helm package charts/test-app --destination=.cr-release-packages
 
       - name: Run chart-releaser
         if: env.SKIP == 'false'
-        uses: helm/chart-releaser-action@v1.5.0
+        uses: helm/chart-releaser-action@v1.6.0
         with:
           charts_dir: test-app
-          skip_packaging: true
+#          skip_packaging: true
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
