@@ -9,13 +9,6 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Check branch
-        run: |
-          if [[ "${GITHUB_REF#refs/heads/}" != "main" ]]; then
-            echo "Release workflow can only run on the 'main' branch"
-            exit 1
-          fi
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
